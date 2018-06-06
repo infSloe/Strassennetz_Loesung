@@ -31,36 +31,36 @@ public class Graph
 
     //Methoden
     
-    // Aufgabe 1: Schreibe Kommentare. Was wird hier gemacht?
     public void tiefensuche(String bez)
     {
-        // Dein Kommentar
+        // Knoten zum passenden bezeichner suchen
         int startNr = knotennummerGeben(bez); 
-        // Dein Kommentar
+        // Alle Knoten als unbesucht markieren
         for (int i = 0; i < anzahl; i++)
         {
             knotenliste[i].markierungSetzen(false);
         }
-        // Dein Kommentar
+        // Aufruf der rekursiven Suchmethode
         tiefensucheKnoten(startNr);
     }
-    
-    // Aufgabe 2: Vervollständige die Methode tiefensucheKnoten!
 
     private void tiefensucheKnoten(int nummer)
     {
         // Knoten als besucht markieren
-       
-        // Information über Knote ausgeben
+        knotenliste[nummer].markierungSetzen(true);
+        System.out.println("Besuchter Knoten: " + knotenliste[nummer].inhaltGeben());
 
         // Bearbeitung der noch nicht besuchten Nachbarknoten
         for (int i = 0; i < anzahl; i++)
         {
-            //
+            if (adjazenzmatrix[nummer][i] != -1 && !knotenliste[i].markierungGeben())
+            {
+                // rekursiver Aufruf
+                tiefensucheKnoten(i);
+            }
         }
         System.out.println("zurück");
     }
-
     
     /*
      * Erzeugt einen neuen Knoten mit dem übergebenen Inhalt und fügt ihn in die Knotenliste ein.
