@@ -1,1 +1,0 @@
-Lösung zur Aufgabe Strassennetz
