@@ -1,7 +1,6 @@
 Lösung zur Aufgabe Strassennetz
 # Straßennetz
 
- -[ ] test
-
+ - [ ] test
 - [x] test
 
